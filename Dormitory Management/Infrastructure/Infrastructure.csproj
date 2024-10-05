@@ -9,6 +9,7 @@
   <ItemGroup>
     <Folder Include="Mapper\" />
     <Folder Include="Repositories\" />
+    <Folder Include="Repositories\" />
     <Folder Include="RepositoryInterface\" />
   </ItemGroup>
 
