@@ -7,10 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Mapper\" />
+    <Compile Remove="RepositoryInterface\**" />
+    <EmbeddedResource Remove="RepositoryInterface\**" />
+    <None Remove="RepositoryInterface\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Repositories\" />
     <Folder Include="Repositories\" />
-    <Folder Include="RepositoryInterface\" />
   </ItemGroup>
 
   <ItemGroup>
