@@ -11,5 +11,7 @@ public partial class GenSocialStatusType
 
     public int? PrimaryPaytypeId { get; set; }
 
+    public virtual ICollection<GenStudent> GenStudents { get; set; } = new List<GenStudent>();
+
     public virtual GenPayType? PrimaryPaytype { get; set; }
 }

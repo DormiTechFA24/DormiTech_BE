@@ -5,7 +5,7 @@ namespace Domain.Model;
 
 public partial class GenPunishmentType
 {
-    public int? PunishmentTypeId { get; set; }
+    public int PunishmentTypeId { get; set; }
 
     public string? PunishmentName { get; set; }
 }

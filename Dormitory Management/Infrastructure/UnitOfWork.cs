@@ -1,7 +1,7 @@
 ﻿using Domain.Abstractions;
 using Domain.Model;
 
-namespace Infrastructure.Services.Common;
+namespace Infrastructure;
 
 internal class UnitOfWork : IUnitOfWork, IDisposable
 {

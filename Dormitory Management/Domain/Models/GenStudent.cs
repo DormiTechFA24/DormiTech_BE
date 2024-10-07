@@ -25,6 +25,10 @@ public partial class GenStudent
 
     public int? MajorId { get; set; }
 
+    public virtual GenEthnicity? EthnicityNavigation { get; set; }
+
+    public virtual GenSocialStatusType? SocialType { get; set; }
+
     public virtual SysAccount Student { get; set; } = null!;
 
     public virtual ICollection<TkIssueTicket> Tickets { get; set; } = new List<TkIssueTicket>();
