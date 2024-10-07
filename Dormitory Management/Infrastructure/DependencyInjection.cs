@@ -1,31 +1,33 @@
 ﻿using Domain.Abstractions;
 using Domain.Abstractions.IRepository;
 using Domain.Model;
+using Infrastructure.Mapper;
 using Infrastructure.Repositories;
-using Infrastructure.Services.Common;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace Infrastructure;
 
 public static class DependencyInjection
 {
-    public static IServiceCollection AddInfrastructure
-       (this IServiceCollection services)
+    public static IServiceCollection AddInfractstructure
+       (this IServiceCollection services, IConfiguration config)
     {
-        IConfigurationRoot config = new ConfigurationBuilder()
+        IConfigurationRoot configs = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
             .AddJsonFile("appsettings.json", true, true).Build();
 
         services.AddDbContext<DormiTechContext>
             (options => options.UseSqlServer
-            (config.GetConnectionString
-            ("DefaultConnectionString")!));
+            (configs.GetConnectionString
+            ("DormiTech")!));
 
         services.AddDistributedMemoryCache();
-        services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
 
+        #region Add Scoped
+        services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
         services.AddScoped<IBilBillingRepository, BilBillingRepository>();
         services.AddScoped<IFacBuildingRepository, FacBuildingRepository>();
         services.AddScoped<IFacItemRepository, FacItemRepository>();
@@ -36,6 +38,12 @@ public static class DependencyInjection
         services.AddScoped<ISysPermissionRepository, SysPermissionRepository>();
         services.AddScoped<ISysRoleRepository, SysRoleRepository>();
         services.AddScoped<ITkIssueTicketRepository, TkIssueTicketRepository>();
+
+        #endregion
+
+        // Use local DB
+        //services.AddDbContext<DormiTechContext>(opt => opt.UseSqlServer(config.GetConnectionString("DormiTechDB")));
+        services.AddAutoMapper(typeof(MapperConfigs).Assembly);
 
         return services;
     }
