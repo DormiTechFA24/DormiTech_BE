@@ -7,7 +7,7 @@ public partial class GenEmployee
 {
     public Guid EmployeeId { get; set; }
 
-    public string? EmployeeCode { get; set; }
+    public string? EmployeeName { get; set; }
 
     public string? FullName { get; set; }
 
@@ -15,7 +15,9 @@ public partial class GenEmployee
 
     public int? PositionId { get; set; }
 
-    public virtual GenEmployeePosition? Position { get; set; }
+    public DateTime? CreatedOn { get; set; }
 
-    public virtual SysAccount? SysAccount { get; set; }
+    public Guid? CreatedBy { get; set; }
+
+    public virtual GenEmployeePosition? Position { get; set; }
 }

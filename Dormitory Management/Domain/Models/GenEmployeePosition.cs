@@ -9,5 +9,9 @@ public partial class GenEmployeePosition
 
     public string? PositionName { get; set; }
 
+    public DateTime? CreatedOn { get; set; }
+
+    public Guid? CreatedBy { get; set; }
+
     public virtual ICollection<GenEmployee> GenEmployees { get; set; } = new List<GenEmployee>();
 }

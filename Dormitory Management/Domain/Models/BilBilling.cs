@@ -23,21 +23,17 @@ public partial class BilBilling
 
     public Guid? VerifiedBy { get; set; }
 
-    public Guid? TicketId { get; set; }
-
-    public int? RoomId { get; set; }
-
-    public int? Month { get; set; }
-
-    public int? Year { get; set; }
-
     public int? BillTypeId { get; set; }
 
     public int? PayTypeId { get; set; }
 
+    public virtual ICollection<AccDisciplineTicket> AccDisciplineTickets { get; set; } = new List<AccDisciplineTicket>();
+
+    public virtual ICollection<AccRoomStudentMonthly> AccRoomStudentMonthlies { get; set; } = new List<AccRoomStudentMonthly>();
+
     public virtual GenBillType? BillType { get; set; }
 
-    public virtual FacRoom? Room { get; set; }
+    public virtual GenPayType? PayType { get; set; }
 
     public virtual SysAccount? Student { get; set; }
 

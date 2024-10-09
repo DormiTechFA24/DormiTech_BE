@@ -7,8 +7,6 @@ public partial class SysRole
 {
     public int RoleId { get; set; }
 
-    public string? RoleCode { get; set; }
-
     public string? RoleName { get; set; }
 
     public virtual ICollection<SysAccount> Accounts { get; set; } = new List<SysAccount>();

@@ -13,6 +13,8 @@ public partial class GenDocument
 
     public Guid? CreatedBy { get; set; }
 
+    public virtual ICollection<AccDisciplineTicketDocument> AccDisciplineTicketDocuments { get; set; } = new List<AccDisciplineTicketDocument>();
+
     public virtual ICollection<AccRoomApplicationDocument> AccRoomApplicationDocuments { get; set; } = new List<AccRoomApplicationDocument>();
 
     public virtual ICollection<SysDocumentSetUp> SysDocumentSetUps { get; set; } = new List<SysDocumentSetUp>();

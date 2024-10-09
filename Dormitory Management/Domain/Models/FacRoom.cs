@@ -15,15 +15,9 @@ public partial class FacRoom
 
     public int? Floor { get; set; }
 
-    public virtual ICollection<AccMonthlyConsumption> AccMonthlyConsumptions { get; set; } = new List<AccMonthlyConsumption>();
-
-    public virtual ICollection<AccMonthlyRoomBill> AccMonthlyRoomBills { get; set; } = new List<AccMonthlyRoomBill>();
-
     public virtual ICollection<AccRoomMonthly> AccRoomMonthlies { get; set; } = new List<AccRoomMonthly>();
 
     public virtual ICollection<AccRoomRealTime> AccRoomRealTimes { get; set; } = new List<AccRoomRealTime>();
-
-    public virtual ICollection<BilBilling> BilBillings { get; set; } = new List<BilBilling>();
 
     public virtual FacBuilding? Building { get; set; }
 

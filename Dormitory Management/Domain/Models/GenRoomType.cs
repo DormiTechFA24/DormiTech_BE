@@ -13,7 +13,11 @@ public partial class GenRoomType
 
     public int? Capacity { get; set; }
 
-    public virtual ICollection<AccRoomApplication> AccRoomApplications { get; set; } = new List<AccRoomApplication>();
+    public DateTime? CreatedOn { get; set; }
+
+    public Guid? CreatedBy { get; set; }
+
+    public virtual ICollection<AccRoomRequest> AccRoomRequests { get; set; } = new List<AccRoomRequest>();
 
     public virtual ICollection<FacRoom> FacRooms { get; set; } = new List<FacRoom>();
 

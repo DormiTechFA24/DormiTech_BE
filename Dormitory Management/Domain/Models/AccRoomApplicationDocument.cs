@@ -5,9 +5,9 @@ namespace Domain.Model;
 
 public partial class AccRoomApplicationDocument
 {
-    public Guid ApplicationId { get; set; }
-
     public int OrderIndex { get; set; }
+
+    public Guid RequestId { get; set; }
 
     public int? DocumentTypeId { get; set; }
 
@@ -19,7 +19,7 @@ public partial class AccRoomApplicationDocument
 
     public Guid? StatusChangedBy { get; set; }
 
-    public virtual AccRoomApplication Application { get; set; } = null!;
-
     public virtual GenDocument? DocumentType { get; set; }
+
+    public virtual AccRoomRequest Request { get; set; } = null!;
 }

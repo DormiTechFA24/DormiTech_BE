@@ -7,7 +7,7 @@ public partial class LogRoomApplication
 {
     public int? HistorySeq { get; set; }
 
-    public Guid? ApplicationId { get; set; }
+    public Guid? RequestId { get; set; }
 
     public string? LogNote { get; set; }
 
@@ -17,5 +17,5 @@ public partial class LogRoomApplication
 
     public Guid? StatusChangedBy { get; set; }
 
-    public virtual AccRoomApplication? Application { get; set; }
+    public virtual AccRoomRequest? Request { get; set; }
 }
