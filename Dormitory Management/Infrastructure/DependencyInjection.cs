@@ -45,6 +45,10 @@ public static class DependencyInjection
         services.AddScoped<IGenDocumentRepository, GenDocumentRepository>();
         services.AddScoped<IGenEmployeePositionRepository, GenEmployeePositionRepository>();
         services.AddScoped<IGenEthnicityRepository, GenEthnicityRepository>();
+        services.AddScoped<IGenItemStatusRepository, GenItemStatusRepository>();
+        services.AddScoped<IGenModuleTypeRepository, GenModuleTypeRepository>();
+        services.AddScoped<IGenPayTypeRepository, GenPayTypeRepository>();
+
         #endregion
 
         // Use local DB
