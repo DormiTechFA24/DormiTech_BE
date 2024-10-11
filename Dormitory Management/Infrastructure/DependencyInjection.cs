@@ -1,6 +1,8 @@
 ﻿using Domain.Abstractions;
 using Domain.Abstractions.IRepository;
 using Domain.Model;
+using Infractstructure.Abstractions.IRepository;
+using Infractstructure.Repositories;
 using Infrastructure.Mapper;
 using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -39,6 +41,10 @@ public static class DependencyInjection
         services.AddScoped<ISysRoleRepository, SysRoleRepository>();
         services.AddScoped<ITkIssueTicketRepository, TkIssueTicketRepository>();
 
+
+        services.AddScoped<IGenDocumentRepository, GenDocumentRepository>();
+        services.AddScoped<IGenEmployeePositionRepository, GenEmployeePositionRepository>();
+        services.AddScoped<IGenEthnicityRepository, GenEthnicityRepository>();
         #endregion
 
         // Use local DB
