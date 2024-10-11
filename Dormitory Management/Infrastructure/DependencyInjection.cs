@@ -51,6 +51,9 @@ public static class DependencyInjection
         services.AddScoped<IGenProvinceRepository, GenProvinceRepository>();
         services.AddScoped<IGenPunishmentTypeRepository, GenPunishmentTypeRepository>();
         services.AddScoped<IGenRoomStatusRepository, GenRoomStatusRepository>();
+        services.AddScoped<IGenServiceRepository, GenServiceRepository>();
+        services.AddScoped<IGenServicePricingRepository, GenServicePricingRepository>();
+        services.AddScoped<IGenRoomTypeRepository, GenRoomTypeRepository>();
 
         #endregion
 
