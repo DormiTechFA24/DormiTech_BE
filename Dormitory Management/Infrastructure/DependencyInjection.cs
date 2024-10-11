@@ -1,6 +1,8 @@
 ﻿using Domain.Abstractions;
 using Domain.Abstractions.IRepository;
 using Domain.Model;
+using Infractstructure.Abstractions.IRepository;
+using Infractstructure.Repositories;
 using Infrastructure.Mapper;
 using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -38,6 +40,25 @@ public static class DependencyInjection
         services.AddScoped<ISysPermissionRepository, SysPermissionRepository>();
         services.AddScoped<ISysRoleRepository, SysRoleRepository>();
         services.AddScoped<ITkIssueTicketRepository, TkIssueTicketRepository>();
+
+
+        services.AddScoped<IGenDocumentRepository, GenDocumentRepository>();
+        services.AddScoped<IGenEmployeePositionRepository, GenEmployeePositionRepository>();
+        services.AddScoped<IGenEthnicityRepository, GenEthnicityRepository>();
+        services.AddScoped<IGenItemStatusRepository, GenItemStatusRepository>();
+        services.AddScoped<IGenModuleTypeRepository, GenModuleTypeRepository>();
+        services.AddScoped<IGenPayTypeRepository, GenPayTypeRepository>();
+        services.AddScoped<IGenProvinceRepository, GenProvinceRepository>();
+        services.AddScoped<IGenPunishmentTypeRepository, GenPunishmentTypeRepository>();
+        services.AddScoped<IGenRoomStatusRepository, GenRoomStatusRepository>();
+        services.AddScoped<IGenServiceRepository, GenServiceRepository>();
+        services.AddScoped<IGenServicePricingRepository, GenServicePricingRepository>();
+        services.AddScoped<IGenRoomTypeRepository, GenRoomTypeRepository>();
+        services.AddScoped<IGenSocialStatusTypeRepository, GenSocialStatusTypeRepository>();
+        services.AddScoped<IGenWardRepository, GenWardRepository>();
+        services.AddScoped<ITkIssueTicketTypeRepository, TkIssueTicketTypeRepository>();
+        services.AddScoped<ITkIssueTicketStatusRepository, TkIssueTicketStatusRepository>();
+
 
         #endregion
 
