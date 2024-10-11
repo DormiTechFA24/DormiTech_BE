@@ -7,28 +7,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Infractstructure.Repositories;
-
-public sealed class GenEmployeePositionRepository : IGenEmployeePositionRepository
+namespace Infractstructure.Repositories
 {
-    private readonly DbSet<GenEmployeePosition> context;
-
-    public GenEmployeePositionRepository(DormiTechContext context)
+    public sealed class GenEmployeePositionRepository : IGenEmployeePositionRepository
     {
-        this.context = context.Set<GenEmployeePosition>();
-    }
+        private readonly DbSet<GenEmployeePosition> context;
 
-    public async Task<IEnumerable<GenEmployeePosition>> GetAll()
-    {
-        IQueryable<GenEmployeePosition> query = context;
+        public GenEmployeePositionRepository(DormiTechContext context)
+        {
+            this.context = context.Set<GenEmployeePosition>();
+        }
 
-        return query;
-    }
+        public async Task<IEnumerable<GenEmployeePosition>> GetAll()
+        {
+            IQueryable<GenEmployeePosition> query = context;
 
-    public async Task<GenEmployeePosition> GetById(Guid id)
-    {
-        IQueryable<GenEmployeePosition> query = context;
+            return query;
+        }
 
-        return await query.FirstOrDefaultAsync();
+        public async Task<GenEmployeePosition> GetById(Guid id)
+        {
+            IQueryable<GenEmployeePosition> query = context;
+
+            return await query.FirstOrDefaultAsync();
+        }
     }
 }
