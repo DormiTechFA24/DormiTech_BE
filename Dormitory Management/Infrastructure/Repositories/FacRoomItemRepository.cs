@@ -1,5 +1,5 @@
-﻿using Domain.Abstractions.IRepository;
-using Domain.Model;
+﻿using Domain.Model;
+using Infrastructure.Abstractions.IRepository;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories;
@@ -22,7 +22,7 @@ public sealed class FacRoomItemRepository : IFacRoomItemRepository
     {
         context
             .Where(ri => ri.ItemId == itemId
-            && ri.RoomId == roomId)
+                         && ri.RoomId == roomId)
             .ExecuteDelete();
     }
 

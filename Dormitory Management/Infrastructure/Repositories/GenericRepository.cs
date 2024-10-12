@@ -1,16 +1,11 @@
 ﻿using Application.IServices;
 using Application.Utils;
-using Microsoft.EntityFrameworkCore.Query;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Domain.Model;
-using Infractstructure.Abstractions.IRepository;
+using Infrastructure.Abstractions.IRepository;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
 
-namespace Infractstructure.Repositories
+namespace Infrastructure.Repositories
 {
     internal class GenericRepository<TModel> : IGenericRepository<TModel> where TModel : class
     {
@@ -37,13 +32,15 @@ namespace Infractstructure.Repositories
         /// </summary>
         /// <param name="include"> The linq expression for include relations we want. </param>
         /// <returns> Return the list of TModel include relations. </returns>
-        public virtual async Task<List<TModel>> GetAllAsync(Func<IQueryable<TModel>, IIncludableQueryable<TModel, object>>? include = null)
+        public virtual async Task<List<TModel>> GetAllAsync(
+            Func<IQueryable<TModel>, IIncludableQueryable<TModel, object>>? include = null)
         {
             IQueryable<TModel> query = _dbSet;
             if (include != null)
             {
                 query = include(query);
             }
+
             return await query.ToListAsync();
         }
 
@@ -91,6 +88,5 @@ namespace Infractstructure.Repositories
             _dbSet.Entry(model).State = EntityState.Deleted;
             return true;
         }
-
-}
+    }
 }

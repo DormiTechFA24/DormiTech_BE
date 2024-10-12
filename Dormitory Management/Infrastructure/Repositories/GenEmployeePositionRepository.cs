@@ -1,13 +1,8 @@
 ﻿using Domain.Model;
-using Infractstructure.Abstractions.IRepository;
+using Infrastructure.Abstractions.IRepository;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Infractstructure.Repositories
+namespace Infrastructure.Repositories
 {
     public sealed class GenEmployeePositionRepository : IGenEmployeePositionRepository
     {

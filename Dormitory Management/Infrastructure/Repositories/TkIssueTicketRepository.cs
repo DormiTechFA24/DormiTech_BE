@@ -1,5 +1,5 @@
-﻿using Domain.Abstractions.IRepository;
-using Domain.Model;
+﻿using Domain.Model;
+using Infrastructure.Abstractions.IRepository;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories;
@@ -32,7 +32,8 @@ public sealed class TkIssueTicketRepository : ITkIssueTicketRepository
         return query;
     }
 
-    public async Task<IEnumerable<TkIssueTicket>> Search(Guid? ticketOwner, DateTime? CreatedOn, DateTime? approvedOn, int ticketStatusId = 0, int ticketTypeId = 0, string header = "")
+    public async Task<IEnumerable<TkIssueTicket>> Search(Guid? ticketOwner, DateTime? CreatedOn, DateTime? approvedOn,
+        int ticketStatusId = 0, int ticketTypeId = 0, string header = "")
     {
         IQueryable<TkIssueTicket> query = context;
 
