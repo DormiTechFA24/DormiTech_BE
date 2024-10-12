@@ -1,9 +1,6 @@
-﻿using Application.IServices;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
+﻿using System.Text.Json.Serialization;
+using Application.IServices;
 using Newtonsoft.Json;
-using System.Text;
-using System.Text.Json.Serialization;
 using WebAPI.Services;
 
 namespace WebAPI
@@ -34,6 +31,7 @@ namespace WebAPI
             services.AddAuthorization();
 
             #region JWT chưa fix
+
             //services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             //{
             //    options.RequireHttpsMetadata = false;
@@ -47,22 +45,20 @@ namespace WebAPI
             //        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
             //    };
             //});
+
             #endregion
 
 
             services.AddCors(options =>
             {
                 options.AddPolicy(name: "_myAllowSpecificOrigins",
-                                  policy =>
-                                  {
-                                      policy.AllowAnyOrigin()
-                                      .AllowAnyHeader()
-                                      .AllowAnyMethod();
-                                  });
+                    policy =>
+                    {
+                        policy.AllowAnyOrigin()
+                            .AllowAnyHeader()
+                            .AllowAnyMethod();
+                    });
             });
-
-
         }
-
     }
 }

@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "APIs", "APIs", "{5ED73C4C-2
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{744E821A-D2D7-44ED-AE19-08342C599C20}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infractstructure", "Infrastructure\Infractstructure.csproj", "{024F6FE7-480C-4C73-83E1-3BF4F7B72EF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{024F6FE7-480C-4C73-83E1-3BF4F7B72EF0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{F7D57A3C-DA5D-409D-BAA5-84F9091F5C99}"
 EndProject

@@ -19,6 +19,7 @@ internal class UnitOfWork : IUnitOfWork, IDisposable
                 _context.Dispose();
             }
         }
+
         disposed = true;
     }
 

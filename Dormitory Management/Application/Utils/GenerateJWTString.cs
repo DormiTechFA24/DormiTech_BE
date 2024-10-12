@@ -1,21 +1,17 @@
-﻿using Domain.Model;
-using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
+﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
+using Domain.Model;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Application.Utils
 {
     //chưa hoàn thành đang để tạm
     internal static class GenerateJWTString
     {
-        public static string GenerateJsonWebToken(this SysAccount account, string key, DateTime now, IConfiguration configuration)
+        public static string GenerateJsonWebToken(this SysAccount account, string key, DateTime now,
+            IConfiguration configuration)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
@@ -33,7 +29,9 @@ namespace Application.Utils
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
-        public static string GenerateJsonWebTokenCustomExpireMinute(this SysAccount account, string key, DateTime startTime, int minutes, IConfiguration configuration)
+
+        public static string GenerateJsonWebTokenCustomExpireMinute(this SysAccount account, string key,
+            DateTime startTime, int minutes, IConfiguration configuration)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
@@ -51,6 +49,5 @@ namespace Application.Utils
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
-
     }
 }

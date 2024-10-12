@@ -1,5 +1,5 @@
-﻿using Domain.Abstractions.IRepository;
-using Domain.Model;
+﻿using Domain.Model;
+using Infrastructure.Abstractions.IRepository;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories;

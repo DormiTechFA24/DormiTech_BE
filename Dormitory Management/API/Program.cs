@@ -14,10 +14,11 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-
 }
+
 app.UseSwagger();
 app.UseSwaggerUI();
+
 #region Add sau
 
 app.UseSession();
@@ -27,6 +28,7 @@ app.MapHealthChecks("/healthz");
 app.UseCors("_myAllowSpecificOrigins");
 
 #endregion
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
@@ -34,4 +36,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-

@@ -1,6 +1,6 @@
 ﻿using Domain.Model;
 
-namespace Domain.Abstractions.IRepository;
+namespace Infrastructure.Abstractions.IRepository;
 
 public interface ISysRoleRepository
 {

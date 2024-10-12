@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Domain.Model;
 
 namespace Domain.Model;
 
@@ -114,9 +111,9 @@ public partial class DormiTechContext : DbContext
     private string GetConnectionString()
     {
         IConfiguration config = new ConfigurationBuilder()
-        .SetBasePath(Directory.GetCurrentDirectory())
-        .AddJsonFile("appsettings.json", true, true)
-        .Build();
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json", true, true)
+            .Build();
         var strConn = config["ConnectionStrings:DormiTechDB"];
         return strConn;
     }
@@ -651,7 +648,8 @@ public partial class DormiTechContext : DbContext
 
         modelBuilder.Entity<GenServicePricing>(entity =>
         {
-            entity.HasKey(e => new { e.ServiceId, e.MaxRoomCapacity, e.MaxUnitCount }).HasName("PK__GEN_Serv__578C642EF80B27DD");
+            entity.HasKey(e => new { e.ServiceId, e.MaxRoomCapacity, e.MaxUnitCount })
+                .HasName("PK__GEN_Serv__578C642EF80B27DD");
 
             entity.ToTable("GEN_ServicePricing");
 

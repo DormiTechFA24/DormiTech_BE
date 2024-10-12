@@ -1,9 +1,4 @@
 ﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infrastructure.Mapper
 {
@@ -12,11 +7,16 @@ namespace Infrastructure.Mapper
         public MapperConfigs()
         {
             #region Add
+
             AddAccountMapperConfig();
+
             #endregion
         }
-        #region create 
+
+        #region create
+
         partial void AddAccountMapperConfig();
+
         #endregion
     }
 }
