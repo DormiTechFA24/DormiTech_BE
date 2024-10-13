@@ -1,39 +1,13 @@
-﻿using Domain.Model;
+﻿using Application.IServices;
+using Domain.Model;
 using Infrastructure.Abstractions.IRepository;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories;
 
-public sealed class SysRoleRepository : ISysRoleRepository
+public sealed class SysRoleRepository : GenericRepository<SysRole>, ISysRoleRepository
 {
-    private readonly DbSet<SysRole> context;
-
-    public SysRoleRepository(DormiTechContext context)
+    public SysRoleRepository(DormiTechContext context, IClaimsServices claimsService) : base(context, claimsService)
     {
-        this.context = context.Set<SysRole>();
-    }
-
-    public void Create(SysRole sysRole)
-    {
-        context.Add(sysRole);
-    }
-
-    public void Delete(int Id)
-    {
-        context
-            .Where(r => r.RoleId == Id)
-            .ExecuteDelete();
-    }
-
-    public async Task<IEnumerable<SysRole>> Get()
-    {
-        IQueryable<SysRole> query = context;
-
-        return query;
-    }
-
-    public void Update(SysRole sysRole)
-    {
-        context.Update(sysRole);
     }
 }

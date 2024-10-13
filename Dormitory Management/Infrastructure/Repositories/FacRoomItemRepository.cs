@@ -1,40 +1,15 @@
-﻿using Domain.Model;
+﻿using Application.IServices;
+using Application.Utils;
+using Domain.Model;
 using Infrastructure.Abstractions.IRepository;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
 
 namespace Infrastructure.Repositories;
 
-public sealed class FacRoomItemRepository : IFacRoomItemRepository
+public sealed class FacRoomItemRepository : GenericRepository<FacRoomItem>, IFacRoomItemRepository
 {
-    private readonly DbSet<FacRoomItem> context;
-
-    public FacRoomItemRepository(DormiTechContext context)
+    public FacRoomItemRepository(DormiTechContext context, IClaimsServices claimsService) : base(context, claimsService)
     {
-        this.context = context.Set<FacRoomItem>();
-    }
-
-    public void Create(FacRoomItem facRoomItem)
-    {
-        context.Add(facRoomItem);
-    }
-
-    public void Delete(int roomId, int itemId)
-    {
-        context
-            .Where(ri => ri.ItemId == itemId
-                         && ri.RoomId == roomId)
-            .ExecuteDelete();
-    }
-
-    public async Task<IEnumerable<FacRoomItem>> Get()
-    {
-        IQueryable<FacRoomItem> query = context;
-
-        return query;
-    }
-
-    public void Update(FacRoomItem facRoomItem)
-    {
-        context.Update(facRoomItem);
     }
 }

@@ -1,46 +1,13 @@
-﻿using Domain.Model;
+﻿using Application.IServices;
+using Domain.Model;
 using Infrastructure.Abstractions.IRepository;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories;
 
-public sealed class SysAccountRepository : ISysAccountRepository
+public sealed class SysAccountRepository : GenericRepository<SysAccount>, ISysAccountRepository
 {
-    private readonly DbSet<SysAccount> context;
-
-    public SysAccountRepository(DormiTechContext context)
+    public SysAccountRepository(DormiTechContext context, IClaimsServices claimsService) : base(context, claimsService)
     {
-        this.context = context.Set<SysAccount>();
-    }
-
-    public void Create(SysAccount sysAccount)
-    {
-        context.Add(sysAccount);
-    }
-
-    public void Delete(Guid Id)
-    {
-        context
-            .Where(a => a.AccountId == Id)
-            .ExecuteDelete();
-    }
-
-    public async Task<IEnumerable<SysAccount>> Get()
-    {
-        IQueryable<SysAccount> query = context;
-
-        return query;
-    }
-
-    public async Task<IEnumerable<SysAccount>> Search(string email = "")
-    {
-        IQueryable<SysAccount> query = context;
-
-        return query;
-    }
-
-    public void Update(SysAccount sysAccount)
-    {
-        context.Update(sysAccount);
     }
 }

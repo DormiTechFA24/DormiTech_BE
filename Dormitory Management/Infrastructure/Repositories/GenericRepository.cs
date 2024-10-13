@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Query;
 
 namespace Infrastructure.Repositories
 {
-    internal class GenericRepository<TModel> : IGenericRepository<TModel> where TModel : class
+    public class GenericRepository<TModel> : IGenericRepository<TModel> where TModel : class
     {
         protected DbSet<TModel> _dbSet;
         private readonly IClaimsServices _claimsService;

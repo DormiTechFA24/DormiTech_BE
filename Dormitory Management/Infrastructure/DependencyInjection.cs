@@ -25,7 +25,7 @@ public static class DependencyInjection
 
         services.AddDistributedMemoryCache();
 
-        #region Add Scoped
+        #region Add Scoped Repository
 
         services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
         services.AddScoped<IBilBillingRepository, BilBillingRepository>();
@@ -37,7 +37,7 @@ public static class DependencyInjection
         services.AddScoped<ISysAccountRepository, SysAccountRepository>();
         services.AddScoped<ISysPermissionRepository, SysPermissionRepository>();
         services.AddScoped<ISysRoleRepository, SysRoleRepository>();
-        services.AddScoped<ITkIssueTicketRepository, TkIssueTicketRepository>();
+        services.AddScoped<ITkIssueTicketRepository, Repositories.TkIssueTicket>();
 
 
         services.AddScoped<IGenDocumentRepository, GenDocumentRepository>();
@@ -56,6 +56,21 @@ public static class DependencyInjection
         services.AddScoped<IGenWardRepository, GenWardRepository>();
         services.AddScoped<ITkIssueTicketTypeRepository, TkIssueTicketTypeRepository>();
         services.AddScoped<ITkIssueTicketStatusRepository, TkIssueTicketStatusRepository>();
+
+        services.AddScoped<IFacBuildingRepository, FacBuildingRepository>();
+        services.AddScoped<IFacItemRepository, FacItemRepository>();
+        services.AddScoped<IFacRoomRepository, FacRoomRepository>();
+        services.AddScoped<IGenAmenityRepository, GenAmenityRepository>();
+        services.AddScoped<IFacRoomAmenityRepository, FacRoomAmentityRepository>();
+        services.AddScoped<IFacRoomItemRepository, FacRoomItemRepository>();
+        services.AddScoped<ISysAccountRoleRepository, SysAccountRoleRepository>();
+        services.AddScoped<ISysRoleRepository, SysRoleRepository>();
+        services.AddScoped<IGenEmployeeRepository, GenEmployeeRepository>();
+        services.AddScoped<IGenStudentRepository, GenStudentRepository>();
+        services.AddScoped<ISysAccountRepository, SysAccountRepository>();
+        services.AddScoped<IAccDisciplineTicketRepository, AccDisciplineTicketRepository>();
+        services.AddScoped<IAccDisciplineTicketDocumentRepository, AccDisciplineTicketDocumentRepository>();
+        services.AddScoped<IAccDisciplineTicketPunishmentRepository, AccDisciplineTicketPunishmentRepository>();
 
         #endregion
 

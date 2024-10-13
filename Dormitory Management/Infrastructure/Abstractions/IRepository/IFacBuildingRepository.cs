@@ -2,14 +2,14 @@
 
 namespace Infrastructure.Abstractions.IRepository;
 
-public interface IFacBuildingRepository
+public interface IFacBuildingRepository : IGenericRepository<FacBuilding>
 {
-    Task<IEnumerable<FacBuilding>> Get();
+    //Task<IEnumerable<FacBuilding>> Get();
 
-    Task<IEnumerable<FacBuilding>> Search(
-        string name);
+    //Task<IEnumerable<FacBuilding>> Search(
+    //    string name);
 
-    void Create(FacBuilding facBuilding);
-    void Update(FacBuilding facBuilding);
-    void Delete(int id);
+    //void Create(FacBuilding facBuilding);
+    //void Update(FacBuilding facBuilding);
+    //void Delete(int id);
 }
