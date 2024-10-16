@@ -37,7 +37,7 @@ public static class DependencyInjection
         services.AddScoped<ISysAccountRepository, SysAccountRepository>();
         services.AddScoped<ISysPermissionRepository, SysPermissionRepository>();
         services.AddScoped<ISysRoleRepository, SysRoleRepository>();
-        services.AddScoped<ITkIssueTicketRepository, Repositories.TkIssueTicket>();
+        services.AddScoped<ITkIssueTicketRepository, TkIssueTicketRepository>();
 
 
         services.AddScoped<IGenDocumentRepository, GenDocumentRepository>();
@@ -71,6 +71,12 @@ public static class DependencyInjection
         services.AddScoped<IAccDisciplineTicketRepository, AccDisciplineTicketRepository>();
         services.AddScoped<IAccDisciplineTicketDocumentRepository, AccDisciplineTicketDocumentRepository>();
         services.AddScoped<IAccDisciplineTicketPunishmentRepository, AccDisciplineTicketPunishmentRepository>();
+
+        services.AddScoped<ITkIssueTicketDetailRepository, TkIssueTicketDetailRepository>();
+        services.AddScoped<ITkIssueTicketPhotoRepository, TkIssueTicketPhotoRepository>();
+        services.AddScoped<IAccRoomRequestRepository, AccRoomRequestRepository>();
+        services.AddScoped<IAccRoomMonthlyRepository, AccRoomMonthlyRepository>();
+        services.AddScoped<IAccRoomStudentMonthlyRepository, AccRoomStudentMonthlyRepository>();
 
         #endregion
 
