@@ -1,4 +1,6 @@
-﻿using Domain.Abstractions;
+﻿using Application.Services;
+using Application.Services.IServices;
+using Infrastructure.Abstractions;
 using Domain.Model;
 using Infrastructure.Abstractions.IRepository;
 using Infrastructure.Mapper;
@@ -6,6 +8,7 @@ using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Application.Abstractions;
 
 namespace Infrastructure;
 
@@ -37,7 +40,7 @@ public static class DependencyInjection
         services.AddScoped<ISysAccountRepository, SysAccountRepository>();
         services.AddScoped<ISysPermissionRepository, SysPermissionRepository>();
         services.AddScoped<ISysRoleRepository, SysRoleRepository>();
-        services.AddScoped<ITkIssueTicketRepository, Repositories.TkIssueTicket>();
+        services.AddScoped<ITkIssueTicketRepository, TkIssueTicketRepository>();
 
 
         services.AddScoped<IGenDocumentRepository, GenDocumentRepository>();
@@ -73,7 +76,10 @@ public static class DependencyInjection
         services.AddScoped<IAccDisciplineTicketPunishmentRepository, AccDisciplineTicketPunishmentRepository>();
 
         #endregion
+        #region AddScoped Services
+        services.AddTransient<IRoomServices, RoomServices>();
 
+        #endregion
         // Use local DB
         //services.AddDbContext<DormiTechContext>(opt => opt.UseSqlServer(config.GetConnectionString("DormiTechDB")));
         services.AddAutoMapper(typeof(MapperConfigs).Assembly);

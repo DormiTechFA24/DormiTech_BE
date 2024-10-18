@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories
 {
-    internal sealed class GenRoomStatusRepository : IGenRoomStatusRepository
+    public sealed class GenRoomStatusRepository : IGenRoomStatusRepository
     {
         private readonly DbSet<GenRoomStatus> context;
 

@@ -2,7 +2,7 @@
 
 namespace Infrastructure.Abstractions.IRepository;
 
-internal interface IGenRoomStatusRepository
+public interface IGenRoomStatusRepository
 {
     Task<IEnumerable<GenRoomStatus>> GetAll();
     Task<GenRoomStatus> GetById(Guid id);
