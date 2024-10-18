@@ -26,4 +26,11 @@ public class LogRoomApplicationRepository(DormiTechContext context) : ILogRoomAp
             .Where(l => l.StatusChangedOn.HasValue && l.StatusChangedOn.Value.Date >= startDate.Date &&
                         l.StatusChangedOn.Value.Date <= endDate.Date).ToListAsync();
     }
+    
+    public async Task<IEnumerable<LogRoomApplication>> GetByStatusChangedBy(Guid accountId)
+    {
+        return await _context
+            .Where(l => l.StatusChangedBy == accountId)
+            .ToListAsync();
+    }
 }
