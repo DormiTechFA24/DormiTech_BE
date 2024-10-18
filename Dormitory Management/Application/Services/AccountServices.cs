@@ -1,4 +1,4 @@
-﻿namespace Application.ServicesInterfaces
+﻿namespace Application.Services
 {
     internal class AccountServices
     {

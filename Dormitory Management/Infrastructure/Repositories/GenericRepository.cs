@@ -1,4 +1,4 @@
-﻿using Application.IServices;
+﻿using Application.Services.IServices;
 using Application.Utils;
 using Domain.Model;
 using Infrastructure.Abstractions.IRepository;

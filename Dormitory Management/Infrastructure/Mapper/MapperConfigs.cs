@@ -6,17 +6,20 @@ namespace Infrastructure.Mapper
     {
         public MapperConfigs()
         {
-            #region Add
+            #region#region Add
 
             AddAccountMapperConfig();
-
+            AddRoomMapperConfig();  
             #endregion
+
+
+
         }
 
         #region create
 
         partial void AddAccountMapperConfig();
-
+        partial void AddRoomMapperConfig();
         #endregion
     }
 }

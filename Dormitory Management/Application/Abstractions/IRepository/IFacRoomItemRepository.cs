@@ -1,5 +1,4 @@
 ﻿using Domain.Model;
-using Infrastructure.Repositories;
 
 namespace Infrastructure.Abstractions.IRepository;
 

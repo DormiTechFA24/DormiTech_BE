@@ -1,4 +1,4 @@
-﻿namespace Application.IServices
+﻿namespace Application.Services.IServices
 {
     public interface IClaimsServices
     {

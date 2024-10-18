@@ -1,15 +1,27 @@
-﻿using Domain.Abstractions;
+﻿using Infrastructure.Abstractions;
 using Domain.Model;
-
+using Infrastructure.Abstractions.IRepository;
+using Application.Abstractions;
 namespace Infrastructure;
 
-internal class UnitOfWork : IUnitOfWork, IDisposable
+public class UnitOfWork : IUnitOfWork, IDisposable
 {
     private readonly DormiTechContext _context;
-    public UnitOfWork(DormiTechContext context) => _context = context;
+    //public UnitOfWork(DormiTechContext context) => _context = context;
 
     private bool disposed = false;
 
+    #region demo
+    private readonly IFacRoomRepository _roomRepository;
+
+    public UnitOfWork(DormiTechContext context, IFacRoomRepository roomRepository)
+    {
+        _context = context;
+        _roomRepository = roomRepository;
+    }
+
+    public IFacRoomRepository roomRepository => _roomRepository;
+    #endregion
     protected virtual void Dispose(bool disposing)
     {
         if (!disposed)
@@ -28,6 +40,8 @@ internal class UnitOfWork : IUnitOfWork, IDisposable
         Dispose(true);
         GC.SuppressFinalize(this);
     }
+
+
 
     public Task<int> SaveChangeAsync(CancellationToken cancellationToken = default)
     {
