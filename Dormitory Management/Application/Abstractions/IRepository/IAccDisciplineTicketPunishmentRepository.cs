@@ -1,6 +1,6 @@
 ﻿using Domain.Model;
 
-namespace Infrastructure.Abstractions.IRepository
+namespace Application.Abstractions.IRepository
 {
     //Còn thiếu
     public interface IAccDisciplineTicketPunishmentRepository : IGenericRepository<TkIssueTicketPhoto>

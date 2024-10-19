@@ -1,13 +1,9 @@
 ﻿using Domain.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Application.Abstractions.IRepository;
 
-namespace Infrastructure.Abstractions.IRepository
+namespace Application.Abstractions.IRepository
 {
-    internal interface IAccRoomMonthlyRepository
+    public interface IAccRoomMonthlyRepository
     {
         Task<List<AccRoomMonthly>> GetByRoomId(Guid id);
         Task<List<AccRoomMonthly>> GetFromDateToDate(DateTime from, DateTime to);

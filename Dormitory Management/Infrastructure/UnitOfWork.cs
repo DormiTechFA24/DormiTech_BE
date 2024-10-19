@@ -1,7 +1,6 @@
-﻿using Infrastructure.Abstractions;
+﻿using Application.Abstractions;
 using Domain.Model;
-using Infrastructure.Abstractions.IRepository;
-using Application.Abstractions;
+using Application.Abstractions.IRepository;
 namespace Infrastructure;
 
 public class UnitOfWork : IUnitOfWork, IDisposable

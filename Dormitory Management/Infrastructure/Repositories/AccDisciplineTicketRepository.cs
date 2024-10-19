@@ -1,6 +1,6 @@
 ﻿using Application.Services.IServices;
 using Domain.Model;
-using Infrastructure.Abstractions.IRepository;
+using Application.Abstractions.IRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,9 +1,8 @@
-﻿using Application.Services.IServices;
-using Domain.Model;
-using Infrastructure.Abstractions.IRepository;
+﻿using Domain.Model;
+using Application.Abstractions.IRepository;
 using Microsoft.EntityFrameworkCore;
-
-namespace Infrastructure.Repositories;
+using Application.Services.IServices;
+using Infrastructure.Repositories;
 
 public sealed class SysRoleRepository : GenericRepository<SysRole>, ISysRoleRepository
 {

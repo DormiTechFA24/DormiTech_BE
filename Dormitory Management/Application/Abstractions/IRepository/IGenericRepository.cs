@@ -1,7 +1,7 @@
 ﻿using Application.Utils;
 using Microsoft.EntityFrameworkCore.Query;
 
-namespace Infrastructure.Abstractions.IRepository
+namespace Application.Abstractions.IRepository
 {
     //Dùng cho cho các CRUD cơ bản
     public interface IGenericRepository<TModel> where TModel : class
