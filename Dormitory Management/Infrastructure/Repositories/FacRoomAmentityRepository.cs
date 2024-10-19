@@ -1,11 +1,7 @@
-﻿using Application.Services.IServices;
-using Domain.Model;
-using Infrastructure.Abstractions.IRepository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Domain.Model;
+using Application.Abstractions.IRepository;
+using Microsoft.EntityFrameworkCore;
+using Application.Services.IServices;
 
 namespace Infrastructure.Repositories
 {

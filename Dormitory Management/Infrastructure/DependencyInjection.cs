@@ -1,14 +1,13 @@
 ﻿using Application.Services;
 using Application.Services.IServices;
-using Infrastructure.Abstractions;
+using Application.Abstractions;
 using Domain.Model;
-using Infrastructure.Abstractions.IRepository;
+using Application.Abstractions.IRepository;
 using Infrastructure.Mapper;
 using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Application.Abstractions;
 
 namespace Infrastructure;
 
@@ -87,7 +86,7 @@ public static class DependencyInjection
 
         #endregion
         // Use local DB
-        //services.AddDbContext<DormiTechContext>(opt => opt.UseSqlServer(config.GetConnectionString("DormiTechDB")));
+        services.AddDbContext<DormiTechContext>(opt => opt.UseSqlServer(config.GetConnectionString("DormiTechDB")));
         services.AddAutoMapper(typeof(MapperConfigs).Assembly);
 
         return services;

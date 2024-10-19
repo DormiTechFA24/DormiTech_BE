@@ -1,7 +1,7 @@
 ﻿using Application.Services.IServices;
 using Application.Utils;
 using Domain.Model;
-using Infrastructure.Abstractions.IRepository;
+using Application.Abstractions.IRepository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
 

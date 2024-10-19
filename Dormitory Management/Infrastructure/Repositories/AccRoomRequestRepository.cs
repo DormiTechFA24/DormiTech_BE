@@ -1,18 +1,11 @@
-﻿using Application.IServices;
-using Application.Utils;
-using Domain.Model;
-using Infrastructure.Abstractions.IRepository;
+﻿using Domain.Model;
+using Application.Abstractions.IRepository;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Query;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Application.Services.IServices;
 
 namespace Infrastructure.Repositories
 {
-    internal sealed class AccRoomRequestRepository : GenericRepository<AccRoomRequest>, IAccRoomRequestRepository
+    public sealed class AccRoomRequestRepository : GenericRepository<AccRoomRequest>, IAccRoomRequestRepository
     {
         private readonly DbSet<AccRoomRequest> context;
 

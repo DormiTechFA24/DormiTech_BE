@@ -1,13 +1,9 @@
 ﻿using Domain.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Application.Abstractions.IRepository;
 
-namespace Infrastructure.Abstractions.IRepository
+namespace Application.Abstractions.IRepository
 {
-    internal interface ITkIssueTicketDetailRepository : IGenericRepository<TkIssueTicketDetail>
+    public interface ITkIssueTicketDetailRepository : IGenericRepository<TkIssueTicketDetail>
     {
         Task<List<TkIssueTicketDetail>> GetByTicketId(Guid id);
     }

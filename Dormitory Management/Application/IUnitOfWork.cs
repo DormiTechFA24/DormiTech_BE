@@ -1,5 +1,5 @@
 ﻿
-using Infrastructure.Abstractions.IRepository;
+using Application.Abstractions.IRepository;
 
 namespace Application.Abstractions;
 
