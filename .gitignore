@@ -396,3 +396,5 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/Dormitory Management/API/appsettings.json
+/Dormitory Management/Infrastructure/appsettings.json
