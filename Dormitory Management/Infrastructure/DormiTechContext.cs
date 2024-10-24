@@ -100,23 +100,18 @@ public partial class DormiTechContext : DbContext
 
     public virtual DbSet<TkIssueTicketType> TkIssueTicketTypes { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        if (!optionsBuilder.IsConfigured)
-        {
-            optionsBuilder.UseSqlServer(GetConnectionString());
-        }
-    }
-
-    private string GetConnectionString()
-    {
-        IConfiguration config = new ConfigurationBuilder()
-            .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("appsettings.json", true, true)
-            .Build();
-        var strConn = config["ConnectionStrings:DormiTechDB"];
-        return strConn;
-    }
+    //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    //{
+    //    if (!optionsBuilder.IsConfigured)
+    //    {
+    //        IConfigurationRoot configuration = new ConfigurationBuilder()
+    //           .SetBasePath(Directory.GetCurrentDirectory())
+    //           .AddJsonFile("appsettings.json")
+    //           .Build();
+    //        var connectionString = configuration.GetConnectionString("DormiTechDB");
+    //        optionsBuilder.UseSqlServer(connectionString);
+    //    }
+    //}
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
