@@ -17,14 +17,14 @@ public static class DependencyInjection
     public static IServiceCollection AddInfractstructure
         (this IServiceCollection services, IConfiguration config)
     {
-        //IConfigurationRoot configs = new ConfigurationBuilder()
-        //    .SetBasePath(Directory.GetCurrentDirectory())
-        //    .AddJsonFile("appsettings.json", true, true).Build();
+        IConfigurationRoot configs = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json", true, true).Build();
 
-        //services.AddDbContext<DormiTechContext>
-        //(options => options.UseSqlServer
-        //(configs.GetConnectionString
-        //    ("DormiTechDB")!));
+        services.AddDbContext<DormiTechContext>
+        (options => options.UseSqlServer
+        (configs.GetConnectionString
+            ("DormiTechDB")!));
 
         services.AddDistributedMemoryCache();
 
