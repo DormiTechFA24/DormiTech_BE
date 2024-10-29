@@ -15,20 +15,21 @@ namespace Infrastructure.Repositories
             this.context = context.Set<AccRoomMonthly>();
         }
 
+        public async Task<List<AccRoomMonthly>> GetAll()
+        {
+            return await context.ToListAsync();
+        }
+
         public async Task<List<AccRoomMonthly>> GetByRoomId(Guid id)
         {
-            var query = await context.Where(s => s.RoomId.Equals(id)).ToListAsync();
-
-            return query;
+            return await context.Where(s => s.RoomId.Equals(id)).ToListAsync();
         }
 
         public async Task<List<AccRoomMonthly>> GetFromDateToDate(DateTime from, DateTime to)
         {
-            var query = await context
+            return await context
                 .Where(s => s.CreatedOn > from &&
                 s.CreatedOn < to).ToListAsync();
-
-            return query;
         }
     }
 }
