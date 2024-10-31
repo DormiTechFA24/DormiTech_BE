@@ -1,6 +1,10 @@
-﻿namespace Application.Services.IServices
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace Application.Services.IServices
 {
-    internal class IAccountServices
+    public interface IAccountServices
     {
+        Task<IActionResult> GetAll();
+        Task<IActionResult> GetAccountId(int id);
     }
 }

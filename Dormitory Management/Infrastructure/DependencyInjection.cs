@@ -84,6 +84,26 @@ public static class DependencyInjection
         #endregion
         #region AddScoped Services
         services.AddTransient<IRoomServices, RoomServices>();
+        services.AddTransient<IDocumentService, DocumentService>();
+        services.AddTransient<IEmployeePositionService, EmployeePositionService>();
+        services.AddTransient<IEthnicityService, EthnicityService>();
+        services.AddTransient<IItemStatusService, ItemStatusService>();
+        services.AddTransient<IModuleTypeService, ModuleTypeService>();
+        services.AddTransient<IPayTypeService, PayTypeService>();
+        services.AddTransient<IProvinceService, ProvinceService>();
+        services.AddTransient<IPunishmentTypeService, PunishmentTypeService>();
+        services.AddTransient<IRoomStatusService, RoomStatusService>();
+        services.AddTransient<IRoomTypeService, RoomTypeService>();
+        services.AddTransient<IServiceService, ServiceService>();
+        services.AddTransient<IServicePricingService, ServicePricingService>();
+        services.AddTransient<ISocialStatusTypeService, SocialStatusTypeService>();
+        services.AddTransient<IStudentService, StudentService>();
+        services.AddTransient<IWardService, WardService>();
+        services.AddTransient<IIssueTicketTypeService, IssueTicketTypeService>();
+        services.AddTransient<IIssueTicketStatusService, IssueTicketStatusService>();
+
+
+
 
         #endregion
         // Use local DB
