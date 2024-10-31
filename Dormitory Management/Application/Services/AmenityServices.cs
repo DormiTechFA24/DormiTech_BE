@@ -21,15 +21,15 @@ namespace Application.Services
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public Task<List<AmenityResponse>> GetAll()
+        public async Task<List<AmenityResponse>> GetAll()
         {
-            var amenities = _mapper.Map<List<AmenityResponse>>(await _unitOfWork..GetAllAsync());
+            var amenities = _mapper.Map<List<AmenityResponse>>(await _unitOfWork.amenityRepository.GetAllAsync());
             return amenities;
         }
 
-        public Task<AmenityResponse> GetByID(int id)
+        public async Task<AmenityResponse> GetByID(int id)
         {
-            var room = _mapper.Map<AmenityResponse>(await _unitOfWork.roomRepository.GetByIdAsync(roomId));
+            var room = _mapper.Map<AmenityResponse>(await _unitOfWork.amenityRepository.GetByIdAsync(id));
             return room;
         }
     }

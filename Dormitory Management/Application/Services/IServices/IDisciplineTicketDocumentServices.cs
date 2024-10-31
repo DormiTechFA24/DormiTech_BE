@@ -1,4 +1,5 @@
-﻿using Domain.Model;
+﻿using Application.View_Models.ResponseModels;
+using Domain.Model;
 using Microsoft.AspNetCore.Authentication;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ namespace Application.Services.IServices
 {
     public interface IDisciplineTicketDocumentServices
     {
-        Task<List<AccDisciplineTicket>> GetAll();
-        Task<AccDisciplineTicket> GetByID(Guid id);
+        Task<List<DisciplineResponse>> GetAll();
+        Task<DisciplineResponse> GetByID(Guid id);
     }
 }
