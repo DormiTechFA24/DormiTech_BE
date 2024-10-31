@@ -82,7 +82,7 @@ public static class DependencyInjection
         services.AddScoped<IAccRoomStudentMonthlyRepository, AccRoomStudentMonthlyRepository>();
 
         #endregion
-        #region AddScoped Services
+        #region Add Transient Services
         services.AddTransient<IRoomServices, RoomServices>();
         services.AddTransient<IDocumentService, DocumentService>();
         services.AddTransient<IEmployeePositionService, EmployeePositionService>();
@@ -102,6 +102,14 @@ public static class DependencyInjection
         services.AddTransient<IIssueTicketTypeService, IssueTicketTypeService>();
         services.AddTransient<IIssueTicketStatusService, IssueTicketStatusService>();
 
+        services.AddTransient<IIssueTicketStatusService, IssueTicketStatusService>();
+        services.AddTransient<IIssueTicketStatusService, IssueTicketStatusService>();
+        services.AddTransient<IIssueTicketStatusService, IssueTicketStatusService>();
+        services.AddTransient<IIssueTicketStatusService, IssueTicketStatusService>();
+        services.AddTransient<IIssueTicketStatusService, IssueTicketStatusService>();
+        services.AddTransient<IIssueTicketStatusService, IssueTicketStatusService>();
+        services.AddTransient<IIssueTicketStatusService, IssueTicketStatusService>();
+        services.AddTransient<IIssueTicketStatusService, IssueTicketStatusService>();
 
 
 

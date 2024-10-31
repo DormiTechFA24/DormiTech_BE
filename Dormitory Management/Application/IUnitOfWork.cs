@@ -29,6 +29,14 @@ public interface IUnitOfWork
     public IAccRoomRequestRepository roomRequestRepository { get; }
     public IAccRoomMonthlyRepository roomMonthlyRepository { get; }
     public IAccRoomStudentMonthlyRepository roomStudentMonthlyRepository { get; }
+    public IGenAmenityRepository amenityRepository { get; }
+    public IFacBuildingRepository facBuildingRepository { get; }
+    public IFacItemRepository facItemRepository { get; }
+    public IFacRoomItemRepository facRoomItemRepository { get; }
+    public ISysRoleRepository sysRoleRepository { get; }
+    public IGenEmployeeRepository employeeRepository { get; }
+    public IAccDisciplineTicketRepository accDisciplineTicketRepository { get; }
+    public IAccDisciplineTicketDocumentRepository  accDisciplineTicketDocumentRepository { get; }
     Task<int> SaveChangeAsync(CancellationToken cancellationToken = default);
     void Dispose();
 }

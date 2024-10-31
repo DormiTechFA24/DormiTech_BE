@@ -35,7 +35,14 @@ public class UnitOfWork : IUnitOfWork, IDisposable
     private readonly IAccRoomRequestRepository _roomRequestRepository;
     private readonly IAccRoomMonthlyRepository _roomMonthlyRepository;
     private readonly IAccRoomStudentMonthlyRepository _roomStudentMonthlyRepository;
-
+    private readonly IGenAmenityRepository _amenityRepository;
+    private readonly IFacBuildingRepository _buildingRepository;
+    private readonly IFacItemRepository _itemRepository;
+    private readonly ISysRoleRepository _RoleRepository;
+    private readonly IFacRoomItemRepository _roomItemRepository;
+    private readonly IGenEmployeeRepository _employeeRepository;
+    private readonly IAccDisciplineTicketRepository _disciplineTicketRepository;
+    private readonly IAccDisciplineTicketDocumentRepository _disciplineTicketDocumentRepository;
     public UnitOfWork(DormiTechContext context, IFacRoomRepository roomRepository)
     {
         _context = context;
@@ -66,6 +73,21 @@ public class UnitOfWork : IUnitOfWork, IDisposable
     public IAccRoomMonthlyRepository roomMonthlyRepository => _roomMonthlyRepository;
     public IAccRoomStudentMonthlyRepository roomStudentMonthlyRepository => _roomStudentMonthlyRepository;
     public ITkIssueTicketStatusRepository issueTicketStatusRepository => _issueTicketStatusRepository;
+    public IGenAmenityRepository amenityRepository => _amenityRepository;
+
+    public IFacBuildingRepository facBuildingRepository => _buildingRepository;
+
+    public IFacItemRepository facItemRepository => _itemRepository;
+
+    public IFacRoomItemRepository facRoomItemRepository => _roomItemRepository;
+
+    public ISysRoleRepository sysRoleRepository => _RoleRepository;
+
+    public IGenEmployeeRepository employeeRepository => _employeeRepository;
+
+    public IAccDisciplineTicketRepository accDisciplineTicketRepository => _disciplineTicketRepository;
+
+    public IAccDisciplineTicketDocumentRepository accDisciplineTicketDocumentRepository => _disciplineTicketDocumentRepository;
 
     #endregion
     protected virtual void Dispose(bool disposing)
