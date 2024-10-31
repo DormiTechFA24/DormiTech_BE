@@ -14,7 +14,8 @@ namespace Infrastructure.Mapper
     {
         partial void AddRoomMapperConfig()
         {
-            CreateMap<FacRoom, RoomResponse>().ReverseMap();
+            CreateMap<FacRoom, RoomResponse>()
+                .ReverseMap();
             CreateMap<FacRoom, RoomRequest>().ReverseMap();
         }
     }
