@@ -1,4 +1,5 @@
-﻿using Domain.Model;
+﻿using Application.View_Models.ResponseModels;
+using Domain.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace Application.Services.IServices
 {
     public interface IItemServices
     {
-        Task<List<FacItem>> GetAll();
-        Task<FacItem> GetByID(int id);
+        Task<List<ItemResponse>> GetAll();
+        Task<ItemResponse> GetByID(int id);
     }
 }

@@ -14,6 +14,8 @@ namespace Application.Abstractions.IRepository
 
         //Get by id
         Task<TModel?> GetByIdAsync(int id);
+        Task<TModel?> GetByGuidIdAsync(Guid id);
+
 
         //Thêm
         Task AddAsync(TModel model);

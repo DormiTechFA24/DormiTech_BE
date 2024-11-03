@@ -23,14 +23,14 @@ namespace Application.Services
         }
         public async Task<List<DisciplineResponse>> GetAll()
         {
-            var room = _mapper.Map<List<DisciplineResponse>>(await _unitOfWork.accDisciplineTicketRepository.GetAllAsync());
-            return room;
+            var ticket = _mapper.Map<List<DisciplineResponse>>(await _unitOfWork.accDisciplineTicketRepository.GetAllAsync());
+            return ticket;
         }
 
-        public Task<DisciplineResponse> GetByID(Guid id)
+        public async Task<DisciplineResponse> GetByID(Guid id)
         {
-            var room = _mapper.Map<DisciplineResponse>(await _unitOfWork.accDisciplineTicketRepository.GetByIdAsync(roomId));
-            return room;
+            var ticket = _mapper.Map<DisciplineResponse>(await _unitOfWork.accDisciplineTicketRepository.GetByGuidIdAsync(id));
+            return ticket;
         }
     }
 }

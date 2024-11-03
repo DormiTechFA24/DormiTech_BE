@@ -1,6 +1,7 @@
 ﻿using Application.Abstractions;
 using Application.ResponseModels;
 using Application.Services.IServices;
+using Application.View_Models.ResponseModels;
 using AutoMapper;
 using Domain.Model;
 using System;
@@ -15,21 +16,21 @@ namespace Application.Services
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-        public RoomServices(IUnitOfWork unitOfWork, IMapper mapper)
+        public DisciplineTicketServices(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public Task<List<AccDisciplineTicketDocument>> GetAll()
+        public async Task<List<DisciplineTecketDocuimentReponse>> GetAll()
         {
-            var room = _mapper.Map<List<RoomResponse>>(await _unitOfWork.roomRepository.GetAllAsync());
-            return room;
+            var reponses = _mapper.Map<List<DisciplineTecketDocuimentReponse>>(await _unitOfWork.accDisciplineTicketDocumentRepository.GetAllAsync());
+            return reponses;
         }
 
-        public Task<AccDisciplineTicketDocument> GetByID(Guid id)
+        public async Task<DisciplineTecketDocuimentReponse> GetByID(Guid id)
         {
-            var room = _mapper.Map<RoomResponse>(await _unitOfWork.roomRepository.GetByIdAsync(roomId));
-            return room;
+            var reponses = _mapper.Map<DisciplineTecketDocuimentReponse>(await _unitOfWork.accDisciplineTicketDocumentRepository.GetByGuidIdAsync(id));
+            return reponses;
         }
     }
 }

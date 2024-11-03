@@ -1,6 +1,7 @@
 ﻿using Application.Abstractions;
 using Application.ResponseModels;
 using Application.Services.IServices;
+using Application.View_Models.ResponseModels;
 using AutoMapper;
 using Domain.Model;
 using System;
@@ -15,21 +16,21 @@ namespace Application.Services
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-        public RoomServices(IUnitOfWork unitOfWork, IMapper mapper)
+        public EmloyeeServices(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public Task<List<GenEmployee>> GetAll()
+        public async Task<List<EmployeeReponse>> GetAll()
         {
-            var room = _mapper.Map<List<RoomResponse>>(await _unitOfWork.roomRepository.GetAllAsync());
-            return room;
+            var employees = _mapper.Map<List<EmployeeReponse>>(await _unitOfWork.employeeRepository.GetAllAsync());
+            return employees;
         }
 
-        public Task<GenEmployee> GetByID(Guid id)
+        public async Task<EmployeeReponse> GetByID(Guid id)
         {
-            var room = _mapper.Map<RoomResponse>(await _unitOfWork.roomRepository.GetByIdAsync(roomId));
-            return room;
+            var employees = _mapper.Map<EmployeeReponse>(await _unitOfWork.employeeRepository.GetByGuidIdAsync(id));
+            return employees;
         }
     }
 }

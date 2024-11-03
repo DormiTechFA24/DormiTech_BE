@@ -1,4 +1,5 @@
-﻿using Domain.Model;
+﻿using Application.View_Models.ResponseModels;
+using Domain.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace Application.Services.IServices
 {
     public interface IDisciplineTicketServices
     {
-        Task<List<AccDisciplineTicketDocument>> GetAll();
-        Task<AccDisciplineTicketDocument> GetByID(Guid id);
+        Task<List<DisciplineTecketDocuimentReponse>> GetAll();
+        Task<DisciplineTecketDocuimentReponse> GetByID(Guid id);
     }
 }

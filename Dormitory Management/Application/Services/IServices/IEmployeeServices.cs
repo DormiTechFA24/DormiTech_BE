@@ -1,4 +1,5 @@
-﻿using Domain.Model;
+﻿using Application.View_Models.ResponseModels;
+using Domain.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace Application.Services.IServices
 {
     public interface IEmployeeServices
     {
-        Task<List<GenEmployee>> GetAll();
-        Task<GenEmployee> GetByID(Guid id);
+        Task<List<EmployeeReponse>> GetAll();
+        Task<EmployeeReponse> GetByID(Guid id);
     }
 }

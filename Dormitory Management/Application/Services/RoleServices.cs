@@ -1,10 +1,12 @@
 ﻿using Application.Abstractions;
 using Application.ResponseModels;
 using Application.Services.IServices;
+using Application.View_Models.ResponseModels;
 using AutoMapper;
 using Domain.Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,21 +17,21 @@ namespace Application.Services
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-        public RoomServices(IUnitOfWork unitOfWork, IMapper mapper)
+        public RoleServices(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public Task<List<SysRole>> GetAll()
+        public async Task<List<RoleResponse>> GetAll()
         {
-            var room = _mapper.Map<List<RoomResponse>>(await _unitOfWork.roomRepository.GetAllAsync());
-            return room;
+            var role = _mapper.Map<List<RoomResponse>>(await _unitOfWork.sysRoleRepository.GetAllAsync());
+            return role;
         }
 
-        public Task<SysRole> GetByID(int id)
+        public async Task<RoleResponse> GetByID(int id)
         {
-            var room = _mapper.Map<RoomResponse>(await _unitOfWork.roomRepository.GetByIdAsync(roomId));
-            return room;
+            var role = _mapper.Map<RoomResponse>(await _unitOfWork.sysRoleRepository.GetByIdAsync(id));
+            return role;
         }
     }
 }
