@@ -29,7 +29,7 @@ namespace Application.Services
 
         public async Task<BuidingResponse> GetByID(int id)
         {
-            var building = _mapper.Map<BuidingResponse>(await _unitOfWork.facBuildingRepository.GetByIdAsync(roomId));
+            var building = _mapper.Map<BuidingResponse>(await _unitOfWork.facBuildingRepository.GetByIdAsync(id));
             return building;
         }
     }

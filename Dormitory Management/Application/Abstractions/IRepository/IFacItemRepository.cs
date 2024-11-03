@@ -14,5 +14,4 @@ public interface IFacItemRepository : IGenericRepository<FacItem>
     //void Create(FacItem facItem);
     //void Update(FacItem facItem);
     //void Delete(int Id);
-    Task<object> GetByIdAsync(object roomId);
 }
