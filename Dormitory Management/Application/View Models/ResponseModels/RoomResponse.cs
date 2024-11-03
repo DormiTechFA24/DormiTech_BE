@@ -8,11 +8,11 @@ namespace Application.ResponseModels
 {
     public class RoomResponse
     {
-        public int? RoomTypeId { get; set; }
+        public string? RoomTypeId { get; set; }
 
-        public int? RoomStatus { get; set; }
+        public string? RoomStatus { get; set; }
 
-        public int? BuildingId { get; set; }
+        public string? BuildingId { get; set; }
 
         public int? Floor { get; set; }
     }
