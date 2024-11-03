@@ -24,13 +24,13 @@ namespace Application.Services
         }
         public async Task<List<RoleResponse>> GetAll()
         {
-            var role = _mapper.Map<List<RoomResponse>>(await _unitOfWork.sysRoleRepository.GetAllAsync());
+            var role = _mapper.Map<List<RoleResponse>>(await _unitOfWork.sysRoleRepository.GetAllAsync());
             return role;
         }
 
         public async Task<RoleResponse> GetByID(int id)
         {
-            var role = _mapper.Map<RoomResponse>(await _unitOfWork.sysRoleRepository.GetByIdAsync(id));
+            var role = _mapper.Map<RoleResponse>(await _unitOfWork.sysRoleRepository.GetByIdAsync(id));
             return role;
         }
     }
